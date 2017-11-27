@@ -19,3 +19,22 @@
 
 # IntelliJ
 out/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Compiled binary addons (https://nodejs.org/api/addons.html)
+build/Release
+
+.idea/runConfigurations/
+
+
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Output of 'npm pack'
+*.tgz
