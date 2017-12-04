@@ -1,4 +1,4 @@
 $(function () {
     $("#nav").load("./elements/navbar.html");
-    $("#main").load("./pages/start.html");
+    $("#main").load("./pages/home.html");
 });
