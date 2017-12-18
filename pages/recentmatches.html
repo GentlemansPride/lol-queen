@@ -1,18 +1,20 @@
-<table class="table">
-    <thead>
-    <tr>
-        <th>Lane</th>
-        <th>Champion</th>
-        <th>Season</th>
-        <th>Role</th>
-    </tr>
-    </thead>
-    {{#each matchResults}}
-    <tr>
-        <td>{{lane}}</td>
-        <td>{{champion}}</td>
-        <td>{{season}}</td>
-        <td>{{role}}</td>
-    </tr>
-    {{/each}}
-</table>
+<script id="recent-matches" type="text/x-handlebars-template">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Lane</th>
+            <th>Champion</th>
+            <th>Season</th>
+            <th>Role</th>
+        </tr>
+        </thead>
+        {{#each matches}}
+        <tr>
+            <td>{{lane}}</td>
+            <td>{{champion}}</td>
+            <td>{{season}}</td>
+            <td>{{role}}</td>
+        </tr>
+        {{/each}}
+    </table>
+</script>
