@@ -1,4 +1,8 @@
-<a class="navbar-brand" href="#"><span><img src="./img/ashepx.png"></span>LoL-Queen</a>
+<a class="navbar-brand" href="#">
+    <img src="./img/ashepx.png" width="30" height="30" alt="avatar">
+</a>
+<a class="navbar-brand" href="#">LoL-Queen</a>
+<!--<a class="navbar-brand" href="#"><span><img src="./img/ashepx.png"></span>LoL-Queen</a>-->
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
         aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -9,8 +13,10 @@
              <a class="nav-link" href="#">Example</a>
          </li> -->
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search Summoner" aria-label="Search" id="summonerSearchInput">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="searchSummoner">Search</button>
-    </form>
+    <div class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search Summoner" id="summonerSearchInput">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="searchSummoner"
+                onclick="searchSummoner()">Search
+        </button>
+    </div>
 </div>
