@@ -22,6 +22,7 @@ function searchSummoner() {
     let summonerName = $("#summonerSearchInput").val();
     requestSummonerData(summonerName, function (summonerData) {
         requestRecentMatches(summonerData.accountId, function (recentMatches) {
+            $("#main").empty();
             $("#main").load("./pages/recentmatches.html", function () {
                 $(document).attr("title", "LoLQueen - Recent Matches");
                 let templateScript = $("#recent-matches").html();
