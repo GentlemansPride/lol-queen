@@ -3,6 +3,7 @@ const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
 let CHAMPS;
 
 $(function () {
+    //Get champions
     $.getJSON("./data/champions.json", function (data) {
         CHAMPS = data;
     })
@@ -37,6 +38,7 @@ function searchSummoner() {
                 role: match.role
             }));
             recentMatches.matches = matches;
+            recentMatches.summonerName = summonerName;
             $("#main")
                 .empty()
                 .load("./pages/recentmatches.html", function () {
