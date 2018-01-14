@@ -30,12 +30,13 @@ function searchSummoner() {
     requestSummonerData(summonerName, function (summonerData) {
         requestRecentMatches(summonerData.accountId, function (recentMatches) {
             let matches = [];
-            recentMatches.forEach(match => matches.push({
+            recentMatches.matches.forEach(match => matches.push({
                 lane: match.lane,
                 champion: CHAMPS[match.champion],
                 season: match.season,
                 role: match.role
             }));
+            recentMatches.matches = matches;
             $("#main")
                 .empty()
                 .load("./pages/recentmatches.html", function () {
