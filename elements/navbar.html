@@ -1,4 +1,5 @@
-<a class="navbar-brand" href="#"> <img src="./img/ashepx.png" width="30" height="30" alt="avatar">LoL-Queen</a>
+<a class="navbar-brand" href="#" onclick="return loadMain()"> <img src="./img/ashepx.png" width="30" height="30"
+                                                                 alt="avatar">LoL-Queen</a>
 <!--<a class="navbar-brand" href="#"><span><img src="./img/ashepx.png"></span>LoL-Queen</a>-->
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
         aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,8 +12,7 @@
          </li> -->
     </ul>
     <div class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search Summoner" onkeyup="keyEventListener()"
-               id="summonerSearchInput">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search Summoner" id="summonerSearchInput">
         <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="searchSummoner"
                 onclick="searchSummoner()">Search
         </button>

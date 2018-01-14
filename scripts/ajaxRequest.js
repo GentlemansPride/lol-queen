@@ -24,10 +24,9 @@ function searchSummoner() {
         requestRecentMatches(summonerData.accountId, function (recentMatches) {
             $("#main").load("./pages/recentmatches.html", function () {
                 $(document).attr("title", "LoLQueen - Recent Matches");
-                let theData = recentMatches;
                 let templateScript = $("#recent-matches").html();
                 let template = Handlebars.compile(templateScript);
-                $(document.body).append(template(theData));
+                $("#main").append(template(recentMatches));
             });
         })
     });
