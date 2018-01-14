@@ -12,5 +12,5 @@ function loadMain() {
         .empty()
         .load('./pages/home.html')
         .hide()
-        .fadeIn();
+        .fadeIn("slow");
 }

@@ -31,7 +31,7 @@ function searchSummoner() {
         .empty()
         .load("./pages/loading.html")
         .hide()
-        .fadeIn();
+        .fadeIn("slow");
     requestSummonerData(summonerName, function (summonerData) {
         requestRecentMatches(summonerData.accountId, function (recentMatches) {
             let matches = [];
@@ -52,7 +52,7 @@ function searchSummoner() {
                     $("#main").append(template(recentMatches));
                 })
                 .hide()
-                .fadeIn();
+                .fadeIn("slow");
         })
     });
 }
