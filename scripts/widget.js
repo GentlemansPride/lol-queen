@@ -1,7 +1,7 @@
 $(function () {
     $("#summonerSearchInput").keydown(function (event) {
         if (event.key === "Enter") {
-            $("#searchSummoner").click();
+            searchSummoner();
         }
     });
 });
