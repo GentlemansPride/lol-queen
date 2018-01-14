@@ -10,5 +10,7 @@ $(document).ready(function () {
 function loadMain() {
     $('#main')
         .empty()
-        .load('./pages/home.html');
+        .load('./pages/home.html')
+        .hide()
+        .fadeIn();
 }

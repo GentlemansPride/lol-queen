@@ -27,7 +27,11 @@ function requestRecentMatches(accountId, callback) {
 
 function searchSummoner() {
     let summonerName = $("#summonerSearchInput").val();
-    $("#main").empty().load("./pages/loading.html");
+    $("#main")
+        .empty()
+        .load("./pages/loading.html")
+        .hide()
+        .fadeIn();
     requestSummonerData(summonerName, function (summonerData) {
         requestRecentMatches(summonerData.accountId, function (recentMatches) {
             let matches = [];
@@ -46,7 +50,9 @@ function searchSummoner() {
                     let templateScript = $("#recent-matches").html();
                     let template = Handlebars.compile(templateScript);
                     $("#main").append(template(recentMatches));
-                });
+                })
+                .hide()
+                .fadeIn();
         })
     });
 }
