@@ -12,7 +12,6 @@ function requestSummonerData(summonerName, callback) {
 function requestRecentMatches(accountId, callback) {
     $.getJSON(CORS_PROXY + "https://euw1.api.riotgames.com/lol/match/v3/matchlists/by-account/" + accountId + "/recent?api_key=" + API_KEY,
         function (data) {
-            console.log(data);
             callback(data)
         }
     );
@@ -20,15 +19,17 @@ function requestRecentMatches(accountId, callback) {
 
 function searchSummoner() {
     let summonerName = $("#summonerSearchInput").val();
+    $("#main").empty().load("./pages/loading.html");
     requestSummonerData(summonerName, function (summonerData) {
         requestRecentMatches(summonerData.accountId, function (recentMatches) {
-            $("#main").empty();
-            $("#main").load("./pages/recentmatches.html", function () {
-                $(document).attr("title", "LoLQueen - Recent Matches");
-                let templateScript = $("#recent-matches").html();
-                let template = Handlebars.compile(templateScript);
-                $("#main").append(template(recentMatches));
-            });
+            $("#main")
+                .empty()
+                .load("./pages/recentmatches.html", function () {
+                    $(document).attr("title", "LoLQueen - Recent Matches");
+                    let templateScript = $("#recent-matches").html();
+                    let template = Handlebars.compile(templateScript);
+                    $("#main").append(template(recentMatches));
+                });
         })
     });
 }

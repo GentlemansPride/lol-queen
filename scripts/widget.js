@@ -8,6 +8,7 @@ $(document).ready(function () {
 });
 
 function loadMain() {
-    $('#main').empty();
-    $('#main').load('./pages/home.html');
+    $('#main')
+        .empty()
+        .load('./pages/home.html');
 }
