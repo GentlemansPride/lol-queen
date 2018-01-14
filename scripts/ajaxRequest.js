@@ -12,7 +12,7 @@ function requestSummonerData(summonerName, callback) {
 function requestRecentMatches(accountId, callback) {
     $.getJSON(CORS_PROXY + "https://euw1.api.riotgames.com/lol/match/v3/matchlists/by-account/" + accountId + "/recent?api_key=" + API_KEY,
         function (data) {
-            callback(data)
+            callback(data);
         }
     );
 }
