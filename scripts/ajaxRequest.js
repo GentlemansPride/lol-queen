@@ -3,25 +3,18 @@ const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
 let CHAMPS;
 
 $(function () {
-    //Get champions
-    $.getJSON("./data/champions.json", function (data) {
-        CHAMPS = data;
-    })
+    $.getJSON("./data/champions.json", (data) => CHAMPS = data);
 });
 
 function requestSummonerData(summonerName, callback) {
     $.getJSON(CORS_PROXY + "https://euw1.api.riotgames.com/lol/summoner/v3/summoners/by-name/" + summonerName + "?api_key=" + API_KEY,
-        function (data) {
-            callback(data);
-        }
+        (data) => callback(data)
     );
 }
 
 function requestRecentMatches(accountId, callback) {
     $.getJSON(CORS_PROXY + "https://euw1.api.riotgames.com/lol/match/v3/matchlists/by-account/" + accountId + "/recent?api_key=" + API_KEY,
-        function (data) {
-            callback(data);
-        }
+        (data) => callback(data)
     );
 }
 
@@ -29,11 +22,9 @@ function searchSummoner() {
     let summonerName = $("#summonerSearchInput").val();
     $("#main")
         .empty()
-        .load("./pages/loading.html")
-        .hide()
-        .fadeIn("slow");
-    requestSummonerData(summonerName, function (summonerData) {
-        requestRecentMatches(summonerData.accountId, function (recentMatches) {
+        .load("./pages/loading.html");
+    requestSummonerData(summonerName, (summonerData) => {
+        requestRecentMatches(summonerData.accountId, (recentMatches) => {
             let matches = [];
             recentMatches.matches.forEach(match => matches.push({
                 lane: match.lane,
@@ -45,14 +36,12 @@ function searchSummoner() {
             recentMatches.summonerName = summonerName;
             $("#main")
                 .empty()
-                .load("./pages/recentmatches.html", function () {
+                .load("./pages/recentmatches.html", () => {
                     $(document).attr("title", "LoLQueen - Recent Matches");
                     let templateScript = $("#recent-matches").html();
                     let template = Handlebars.compile(templateScript);
                     $("#main").append(template(recentMatches));
-                })
-                .hide()
-                .fadeIn("slow");
+                });
         })
     });
 }
